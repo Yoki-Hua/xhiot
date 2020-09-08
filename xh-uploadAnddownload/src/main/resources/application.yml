@@ -19,3 +19,4 @@ logging:
 huawei:
   tokenUrl: https://studio.e.huawei.com/baas/auth/v1.0/oauth2/token?grant_type=client_credentials&client_id=b912c749275d43ecb57ee68ce99a9d65&client_secret=dbe9db27898ae54ced833e11273e2f5ecba5808149f3dc78
   excelUrl: https://studio.e.huawei.com/service/xhiot__FSoil/1.0.0/excelUploadData
+  filePath: /usr/local/tomcat/webapps/static/excel/

@@ -19,7 +19,8 @@ public enum ExceptionEnum {
     CONVERSION_ERROR(500, "转换异常"),
     NAME_NOT_ISNULL(400,"姓名不能为空"),
     GET_ACCESS_TOKEN_FAIL(500,"获取华为access_token失败"),
-    DATA_WRITING_FAILED(500,"表格数据写入失败")
+    DATA_WRITING_FAILED(500,"表格数据写入失败"),
+    DATA_DOWNLOAD_FAILED(500, "导出数据到excel失败")
     ;
 
 

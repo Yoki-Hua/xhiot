@@ -5,6 +5,10 @@ import com.xhwl.commons.exceptions.XhException;
 import com.xhwl.pojo.PersonBodyDto;
 import com.xhwl.pojo.PersonInfo;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -14,8 +18,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.io.*;
+import java.net.URLEncoder;
 import java.util.*;
 import org.springframework.web.client.RestTemplate;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletResponse;
+
 import static com.xhwl.commons.enumPackage.ExceptionEnum.*;
 
 
@@ -32,6 +43,9 @@ public class UpAndDownServiceImpl implements UpAndDownService {
     private String tokenUrl;
     @Value("${huawei.excelUrl}")
     private String excelUrl;
+    @Value("${huawei.filePath}")
+    private String filePath;
+
     /**
      * 读取文件
      * @param multipartFile
@@ -100,4 +114,83 @@ public class UpAndDownServiceImpl implements UpAndDownService {
         }
 
     }
+
+    /**
+     * 下载文件
+     * @param personBodyDto
+     * @param response
+     */
+    @Override
+    public String downExcel(PersonBodyDto personBodyDto, HttpServletResponse response) {
+        String path = filePath;
+        File excelFile = new File(path + "人员模板.xlsx");
+        File newExcelFile = POIUtils.createNewFile(excelFile);
+
+        PersonInfo[] persons = personBodyDto.getPersonInfos();
+        //准备写入数据
+        InputStream is = null;
+        OutputStream out = null;
+        Workbook workbook = null;
+        try {
+            is = new FileInputStream(newExcelFile);
+            workbook = new XSSFWorkbook(is);
+
+            //读取模板内所有sheet内容
+            Sheet sheet = workbook.getSheetAt(0);
+            for (int i = 0; i < persons.length; i++) {
+
+                Row row = sheet.getRow(i + 1);
+
+                if(row == null){
+                    row = sheet.createRow(i + 1);
+                    row.createCell(0).setCellValue(persons[i].getName());
+                    row.createCell(1).setCellValue(persons[i].getContact());
+                    row.createCell(2).setCellValue(persons[i].getIdentity());
+                    row.createCell(3).setCellValue(persons[i].getIdNumber());
+                    row.createCell(4).setCellValue(persons[i].getProject());
+                    row.createCell(5).setCellValue(persons[i].getHomeAddress());
+                    row.createCell(6).setCellValue(persons[i].getLoginPerson());
+                    row.createCell(7).setCellValue(persons[i].getEmergencyContact());
+                    row.createCell(8).setCellValue(persons[i].getIsBlack());
+                }else {
+                    row.getCell(0).setCellValue(persons[i].getName());
+                    row.getCell(1).setCellValue(persons[i].getContact());
+                    row.getCell(2).setCellValue(persons[i].getIdentity());
+                    row.getCell(3).setCellValue(persons[i].getIdNumber());
+                    row.getCell(4).setCellValue(persons[i].getProject());
+                    row.getCell(5).setCellValue(persons[i].getHomeAddress());
+                    row.getCell(6).setCellValue(persons[i].getLoginPerson());
+                    row.getCell(7).setCellValue(persons[i].getEmergencyContact());
+                    row.getCell(8).setCellValue(persons[i].getIsBlack());
+                }
+            }
+            out = new FileOutputStream(newExcelFile);
+            workbook.write(out);
+
+//            String fileName = newExcelFile.getName();
+//            OutputStream output = response.getOutputStream();
+//            response.reset();
+//            fileName = URLEncoder.encode("人员信息.xslx", "UTF-8");
+//            response.setContentType("applicationnd/msexcel");
+//            response.setCharacterEncoding("UTF-8");
+//            response.setHeader("Content-Disposition", "attachment; filename=\"" +
+//                    fileName + "\"");//下载文件
+//            workbook.write(output);//写入到Excel模板文件中
+//            output.close();//关闭
+            //POIUtils.deleteFile(newExcelFile);
+            return "导出成功:"+newExcelFile.getName();
+        } catch (Exception e) {
+            throw new XhException(DATA_DOWNLOAD_FAILED);
+        }finally {
+            try {
+                workbook.close();
+                out.close();
+                is.close();
+            } catch (IOException e) {
+                throw new XhException(DATA_DOWNLOAD_FAILED);
+            }
+        }
+
+    }
+
 }

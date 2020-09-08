@@ -6,11 +6,13 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.web.context.ContextLoader;
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -149,5 +151,68 @@ public class POIUtils {
                 break;
         }
         return cellValue;
+    }
+
+
+
+    /**
+     * 读取excel模板，并复制到新文件中供写入和下载
+     * @return
+     */
+    public static File createNewFile(File file){
+        String path = file.getAbsolutePath();
+        //读取模板，并赋值到新文件
+        //新的文件名
+        String newFileName = "人员信息"+System.currentTimeMillis() + ".xlsx";
+
+        //写入到新的excel
+        File newFile = new File(path + newFileName);
+        try {
+            //复制模板到新文件
+            fileChannelCopy(file, newFile);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return newFile;
+    }
+    /**
+     * 复制到的新文件
+     * @param modelFile
+     * @param newFile
+     */
+    public static void fileChannelCopy(File modelFile, File newFile) {
+        try {
+            InputStream in = null;
+            OutputStream out = null;
+            try {
+                in = new BufferedInputStream(new FileInputStream(modelFile),1024);
+                out = new BufferedOutputStream(new FileOutputStream(newFile),1024);
+                byte[] buffer = new byte[1024];
+                int len;
+                while ((len=in.read(buffer))!=-1) {
+                    out.write(buffer,0,len);
+                }
+            } finally {
+                if (null != in) {
+                    in.close();
+                }
+                if (null != out) {
+                    out.close();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * 下载成功后删除
+     * @param files
+     */
+    public static void deleteFile(File... files) {
+        for (File file : files) {
+            if (file.exists()) {
+                file.delete();
+            }
+        }
     }
 }

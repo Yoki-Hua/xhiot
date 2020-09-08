@@ -1,7 +1,9 @@
 package com.xhwl.Service;
 
+import com.xhwl.pojo.PersonBodyDto;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**
@@ -16,4 +18,11 @@ public interface UpAndDownService {
      */
     public Map uploadExcel(MultipartFile multipartFile);
 
+
+    /**
+     * 下载
+     * @param personBodyDto
+     * @param response
+     */
+    public String downExcel(PersonBodyDto personBodyDto ,HttpServletResponse response);
 }
