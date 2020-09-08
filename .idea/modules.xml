@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/xh-auth/xh-auth.iml" filepath="$PROJECT_DIR$/xh-auth/xh-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-auth/xh-auth-interface/xh-auth-interface.iml" filepath="$PROJECT_DIR$/xh-auth/xh-auth-interface/xh-auth-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-auth/xh-auth-service/xh-auth-service.iml" filepath="$PROJECT_DIR$/xh-auth/xh-auth-service/xh-auth-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-common/xh-common.iml" filepath="$PROJECT_DIR$/xh-common/xh-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-email/xh-email.iml" filepath="$PROJECT_DIR$/xh-email/xh-email.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-gateway/xh-gateway.iml" filepath="$PROJECT_DIR$/xh-gateway/xh-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-license-plate/xh-license-plate.iml" filepath="$PROJECT_DIR$/xh-license-plate/xh-license-plate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-register/xh-register.iml" filepath="$PROJECT_DIR$/xh-register/xh-register.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-uploadAnddownload/xh-uploadAnddownload.iml" filepath="$PROJECT_DIR$/xh-uploadAnddownload/xh-uploadAnddownload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-user/xh-user.iml" filepath="$PROJECT_DIR$/xh-user/xh-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-user/xh-user-interface/xh-user-interface.iml" filepath="$PROJECT_DIR$/xh-user/xh-user-interface/xh-user-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-user/xh-user-pojo/xh-user-pojo.iml" filepath="$PROJECT_DIR$/xh-user/xh-user-pojo/xh-user-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-user/xh-user-serve/xh-user-serve.iml" filepath="$PROJECT_DIR$/xh-user/xh-user-serve/xh-user-serve.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/xhiot.iml" filepath="$PROJECT_DIR$/.idea/xhiot.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="xh-user-interface" />
+        <module name="xh-uploadAnddownload" />
+        <module name="xh-license-plate" />
+        <module name="xh-user-serve" />
+        <module name="xh-common" />
+        <module name="xh-gateway" />
+        <module name="xh-auth-service" />
+        <module name="xh-register" />
+        <module name="xh-email" />
+        <module name="xh-user-pojo" />
+        <module name="xh-auth-interface" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="xh-auth" target="1.8" />
+      <module name="xh-auth-interface" target="1.8" />
+      <module name="xh-auth-service" target="1.8" />
+      <module name="xh-common" target="1.8" />
+      <module name="xh-email" target="1.8" />
+      <module name="xh-gateway" target="1.8" />
+      <module name="xh-license-plate" target="1.8" />
+      <module name="xh-register" target="1.8" />
+      <module name="xh-uploadAnddownload" target="1.8" />
+      <module name="xh-user" target="1.8" />
+      <module name="xh-user-interface" target="1.8" />
+      <module name="xh-user-pojo" target="1.8" />
+      <module name="xh-user-serve" target="1.8" />
+      <module name="xhiot" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="xh-auth-interface" options="-parameters" />
+      <module name="xh-auth-service" options="-parameters" />
+      <module name="xh-common" options="-parameters" />
+      <module name="xh-email" options="-parameters" />
+      <module name="xh-gateway" options="-parameters" />
+      <module name="xh-license-plate" options="-parameters" />
+      <module name="xh-register" options="-parameters" />
+      <module name="xh-uploadAnddownload" options="-parameters" />
+      <module name="xh-user-interface" options="-parameters" />
+      <module name="xh-user-pojo" options="-parameters" />
+      <module name="xh-user-serve" options="-parameters" />
+    </option>
+  </component>
+</project>

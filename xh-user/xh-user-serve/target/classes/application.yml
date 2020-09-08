@@ -1,0 +1,58 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: user-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/xhwl_user?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 1234
+  #  rabbitmq:
+  rabbitmq:
+    host: 127.0.0.1
+    username: admin
+    password: admin
+    virtual-host: /xhwl
+    template:
+      retry: #发送失败的重试
+        enabled: true
+        initial-interval: 10000ms
+        max-interval: 80000ms
+        multiplier: 2
+    publisher-confirms: true #打开生产者确认机制
+  #    redis
+  redis:
+    host: 127.0.0.1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://xhwl:xhwl2020@localhost:10000/eureka
+    registry-fetch-interval-seconds: 30 #修改拉取周期5s
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    lease-renewal-interval-in-seconds: 30 #修改心跳为5s
+    lease-expiration-duration-in-seconds: 45 #修改过期时间
+
+mybatis:
+  type-aliases-package: com.xhwl.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.xhwl: debug
+xhwl:
+  encoder:
+    crypt:
+      secret: ${random.uuid} # 随机的密钥，使用uuid
+      strength: 10 # 加密强度4~31，决定了密码和盐加密时的运算次数，超过10以后加密耗时会显著增加
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:   #配置全局的feign的调用超时时间  如果 有指定的服务配置 默认的配置不会生效
+        connectTimeout: 60000 # 指定的是 消费者 连接服务提供者的连接超时时间 是否能连接  单位是毫秒
+        readTimeout: 20000  # 指定的是调用服务提供者的 服务 的超时时间（）  单位是毫秒

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/xh-auth/xh-auth-interface/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xh-auth/xh-auth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xh-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xh-email/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xh-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xh-license-plate/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xh-register/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xh-uploadAnddownload/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xh-user/xh-user-interface/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xh-user/xh-user-pojo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xh-user/xh-user-serve/src/main/java" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,15 @@
+server:
+  port: 10000
+spring:
+  application:
+    name: eureka-service
+  security:
+    user:
+      name: xhwl
+      password: xhwl2020
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:${server.port}/eureka
+    register-with-eureka: false
+    fetch-registry: false

@@ -1,0 +1,34 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: email-service
+  #  rabbitmq:
+  rabbitmq:
+    host: 127.0.0.1
+    username: admin
+    password: admin
+    virtual-host: /xhwl
+
+    #mail
+  mail:
+    userName: mao@islery.com
+    passWord: #授权码开启SMTP服务里设置
+    host: smtp.qq.com
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+          auth: true
+          starttls:
+            enable: false
+
+
+
+
+

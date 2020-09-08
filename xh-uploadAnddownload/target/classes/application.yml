@@ -1,0 +1,18 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: uploadAndDownload-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://xhwl:xhwl2020@localhost:10000/eureka
+    registry-fetch-interval-seconds: 5 #修改拉取周期5s
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    lease-renewal-interval-in-seconds: 5 #修改心跳为5s
+    lease-expiration-duration-in-seconds: 15 #修改过期时间
+logging:
+  level:
+    com.xhwl.licensePlate: debug

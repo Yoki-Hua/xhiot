@@ -1,0 +1,38 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: auth-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/xhwl_user?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 1234
+  #    redis
+  redis:
+    host: 127.0.0.1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://xhwl:xhwl2020@localhost:10000/eureka
+    registry-fetch-interval-seconds: 30 #修改拉取周期5s
+  instance:
+    prefer-ip-address: true
+    ip-address: localhost
+    lease-renewal-interval-in-seconds: 30 #修改心跳为5s
+    lease-expiration-duration-in-seconds: 45 #修改过期时间
+logging:
+  level:
+    com.xhwl: debug
+auth:
+  ttl: 3600  #token存储到redis的过期时间
+  clientId: xhwl
+  clientSecret: xhwl
+  cookieDomain: localhost
+  cookieMaxAge: -1
+encrypt:
+  key-store:
+    location: classpath:/xhwl.jks
+    secret: xhwlxhwl
+    alias: xhwl
+    password: xhwlxhwl

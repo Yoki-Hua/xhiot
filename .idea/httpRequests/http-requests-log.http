@@ -1,0 +1,16 @@
+POST http://localhost:9000/api/license_plate/xhwl/recognition?imgPath=https://xhwl-zhaopin.obs.cn-south-1.myhuaweicloud.com/timg.jpg
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-08-09T064215.500.json
+
+###
+
+POST http://localhost:9000/api/license_plate/xhwl/recognition?imgPath=https://xhwl-zhaopin.obs.cn-south-1.myhuaweicloud.com/timg.jpg
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-08-09T064038.401.txt
+
+###
+
