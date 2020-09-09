@@ -1,0 +1,4 @@
+# 忽略文件
+*.class
+xh-license-plate/src/main/resources/application.yml
+xh-email/src/main/resources/application.yml

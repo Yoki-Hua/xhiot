@@ -10,11 +10,12 @@
       <module fileurl="file://$PROJECT_DIR$/xh-gateway/xh-gateway.iml" filepath="$PROJECT_DIR$/xh-gateway/xh-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/xh-license-plate/xh-license-plate.iml" filepath="$PROJECT_DIR$/xh-license-plate/xh-license-plate.iml" />
       <module fileurl="file://$PROJECT_DIR$/xh-register/xh-register.iml" filepath="$PROJECT_DIR$/xh-register/xh-register.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xh-uploadAnddownload/xh-uploadAnddownload.iml" filepath="$PROJECT_DIR$/xh-uploadAnddownload/xh-uploadAnddownload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-uploadAndDownload/xh-uploadAndDownload.iml" filepath="$PROJECT_DIR$/xh-uploadAndDownload/xh-uploadAndDownload.iml" />
       <module fileurl="file://$PROJECT_DIR$/xh-user/xh-user.iml" filepath="$PROJECT_DIR$/xh-user/xh-user.iml" />
       <module fileurl="file://$PROJECT_DIR$/xh-user/xh-user-interface/xh-user-interface.iml" filepath="$PROJECT_DIR$/xh-user/xh-user-interface/xh-user-interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/xh-user/xh-user-pojo/xh-user-pojo.iml" filepath="$PROJECT_DIR$/xh-user/xh-user-pojo/xh-user-pojo.iml" />
       <module fileurl="file://$PROJECT_DIR$/xh-user/xh-user-serve/xh-user-serve.iml" filepath="$PROJECT_DIR$/xh-user/xh-user-serve/xh-user-serve.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-zuul/xh-zuul.iml" filepath="$PROJECT_DIR$/xh-zuul/xh-zuul.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/xhiot.iml" filepath="$PROJECT_DIR$/.idea/xhiot.iml" />
     </modules>
   </component>

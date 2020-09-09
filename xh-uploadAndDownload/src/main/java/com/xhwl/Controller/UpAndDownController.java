@@ -29,7 +29,6 @@ public class UpAndDownController {
     public ResponseEntity<Map> uploadExcel(@RequestParam("file") MultipartFile multipartFile){
 
         Map map = upAndDownService.uploadExcel(multipartFile);
-
         return ResponseEntity.status(HttpStatus.OK).body(map);
     }
 

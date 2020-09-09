@@ -123,7 +123,7 @@ public class UpAndDownServiceImpl implements UpAndDownService {
     @Override
     public String downExcel(PersonBodyDto personBodyDto, HttpServletResponse response) {
         String path = filePath;
-        File excelFile = new File(path + "人员模板.xlsx");
+        File excelFile = new File(path + "人员信息模板.xlsx");
         File newExcelFile = POIUtils.createNewFile(excelFile);
 
         PersonInfo[] persons = personBodyDto.getPersonInfos();

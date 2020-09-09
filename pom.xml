@@ -15,7 +15,8 @@
         <module>xh-user</module>
         <module>xh-email</module>
         <module>xh-auth</module>
-        <module>xh-uploadAnddownload</module>
+        <module>xh-uploadAndDownload</module>
+        <module>xh-zuul</module>
     </modules>
     <packaging>pom</packaging>
 
