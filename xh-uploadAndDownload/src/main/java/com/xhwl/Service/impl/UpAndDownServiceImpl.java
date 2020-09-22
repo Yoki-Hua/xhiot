@@ -152,6 +152,8 @@ public class UpAndDownServiceImpl implements UpAndDownService {
                     row.createCell(6).setCellValue(persons[i].getLoginPerson());
                     row.createCell(7).setCellValue(persons[i].getEmergencyContact());
                     row.createCell(8).setCellValue(persons[i].getIsBlack());
+                    row.createCell(9).setCellValue(persons[i].getGender());
+                    row.createCell(10).setCellValue(persons[i].getPersonType());
                 }else {
                     row.getCell(0).setCellValue(persons[i].getName());
                     row.getCell(1).setCellValue(persons[i].getContact());
@@ -162,6 +164,8 @@ public class UpAndDownServiceImpl implements UpAndDownService {
                     row.getCell(6).setCellValue(persons[i].getLoginPerson());
                     row.getCell(7).setCellValue(persons[i].getEmergencyContact());
                     row.getCell(8).setCellValue(persons[i].getIsBlack());
+                    row.getCell(9).setCellValue(persons[i].getGender());
+                    row.getCell(10).setCellValue(persons[i].getPersonType());
                 }
             }
             out = new FileOutputStream(newExcelFile);

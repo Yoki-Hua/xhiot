@@ -22,4 +22,6 @@ public class PersonInfo implements Serializable {
     private String loginPerson;
     private String emergencyContact;
     private String isBlack;
+    private String gender;
+    private String personType;
 }

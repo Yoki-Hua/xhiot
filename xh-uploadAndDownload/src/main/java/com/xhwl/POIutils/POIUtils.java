@@ -161,12 +161,13 @@ public class POIUtils {
      */
     public static File createNewFile(File file){
         String path = file.getAbsolutePath();
+        //把路径用 . 切割 便于后面拼接文件名
+        String[] split = path.split("\\.");
         //读取模板，并赋值到新文件
         //新的文件名
-        String newFileName = "人员信息"+System.currentTimeMillis() + ".xlsx";
-
+        String newFileName = "-"+System.currentTimeMillis() + ".xlsx";
         //写入到新的excel
-        File newFile = new File(path + newFileName);
+        File newFile = new File(split[0] + newFileName);
         try {
             //复制模板到新文件
             fileChannelCopy(file, newFile);
